@@ -1,6 +1,11 @@
 {
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+        "path": "/bin/zsh",
+        "args": ["-l", "-i"]
+    }
+},
   "terminal.integrated.fontFamily": "MesloLGS NF",
-  "terminal.integrated.fontSize": 13,
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
@@ -27,7 +32,7 @@
     "vim.useCtrlKeys": true,
     "vim.vimrc.enable": true,
     "vim.leader": "<space>",
-    "vim.vimrc.path": "/Users/sivan/.vimrc",
+    // "vim.vimrc.path": "/Users/sivan/.vimrc",
     "vim.sneakUseIgnorecaseAndSmartcase":true,
     "vim.normalModeKeyBindingsNonRecursive": [
       {
@@ -39,12 +44,20 @@
         "after": ["6", "k"]
       },
       {
+        "before": ["H"],
+        "after": ["^"]
+      },
+      {
+        "before": ["L"],
+        "after": ["$"]
+      },
+      {
         "before": ["Y"],
         "after": ["y", "$"]
       },
       {
         "before": [
-          "<Leader>",","
+          "leader",","
         ],
         "commands": [
           "workbench.action.showCommands"
@@ -168,9 +181,13 @@
         ]
       },
     ],
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Tokyo City Darker",
     "workbench.colorCustomizations": {
-      "[Tokyo Night]": {
+      "[Atom Background Modified]": {
+        "editorCursor.background": "#ffffff", // Cursor color
+      },
+      "[Tokyo *]": {
+        // "editorCursor.foreground": "#8ccaeee3", // Cursor color
         "editorCursor.foreground": "#8c7fca", // Cursor color
         "editorCursor.background": "#ffffff", // Cursor color
         "editor.findMatchHighlightBackground": "#9774d051", // selected color in "find"
@@ -184,10 +201,11 @@
         "panelTitle.activeForeground": "#bdc7f0",
         "panelTitle.inactiveForeground": "#959cbd",
         "tab.activeForeground": "#bdc7f0",
+        "tab.activeBackground": "#4047697e",
         "tab.inactiveForeground": "#959cbd",
         "breadcrumb.foreground": "#959cbd",
         "breadcrumb.focusForeground": "#bdc7f0",
-        "breadcrumb.activeSelectionForeground": "#bdc7f0",
+        "breadcrumb.activeSelectionForeground": "#f0ebbd",
         "statusBar.foreground": "#bdc7f0",
         "list.focusForeground": "#bdc7f0",
         "list.hoverForeground": "#bdc7f0",
@@ -206,63 +224,27 @@
       },
     },
     "editor.tokenColorCustomizations": {
-      "[Tokyo Night*]": {
+      "[Atom Background Modified]": {
         "comments": "#6cd5718a",
-        "textMateRules": [
-          {
-            "scope": [
-              "source.python"
-            ],
-            "settings": {
-              "fontStyle": "",
-              "foreground": "#cfd4ea"
-            }
-          }
-        ]
       },
-      // "textMateRules": [
-      //   {
-      //     "name": "One Dark italic",
-      //     "scope": [
-      //       "comment",
-      //       "entity.other.attribute-name",
-      //       "keyword",
-      //       "markup.underline.link",
-      //       "storage.modifier",
-      //       "storage.type",
-      //       "string.url",
-      //       "variable.language.super",
-      //       "variable.language.this"
-      //     ],
-      //     "settings": {
-      //       "fontStyle": "italic"
-      //     }
-      //   },
-      //   {
-      //     "name": "One Dark italic reset",
-      //     "scope": [
-      //       "keyword.operator",
-      //       "keyword.other.type",
-      //       "storage.modifier.import",
-      //       "storage.modifier.package",
-      //       "storage.type.built-in",
-      //       "storage.type.function.arrow",
-      //       "storage.type.generic",
-      //       "storage.type.java",
-      //       "storage.type.primitive"
-      //     ],
-      //     "settings": {
-      //       "fontStyle": ""
-      //     }
-      //   }
-      // ]
+      "[Tokyo *]": {
+        "comments": "#6cd5718a",
+        // "textMateRules": [
+        //   {
+        //     "scope": [
+        //       "source.python"
+        //     ],
+        //     "settings": {
+        //       "fontStyle": "",
+        //       "foreground": "#cfd4ea"
+        //     }
+        //   }
+        // ]
+      },
     },
     "git.ignoreMissingGitWarning": true,
     "editor.accessibilitySupport": "off",
     "workbench.iconTheme": "material-icon-theme",
-    "customizeUI.activityBar": "bottom",
-    "customizeUI.titleBar": "inline",
-    "window.titleBarStyle": "native",
     "editor.guides.bracketPairs": true,
     "editor.guides.highlightActiveIndentation": true,
     "editor.suggest.preview": true,
@@ -272,12 +254,40 @@
     "editor.minimap.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "material-icon-theme.folders.color": "#42a5f5",
-    "window.zoomLevel": 0.5,
-    "editor.fontSize": 13,
+    "audioCues.terminalQuickFix": "on",
     "[typescriptreact]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.python",
+      "editor.formatOnType": true
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "colorize.languages": ["typescript", "javascript","tsx", "css", "scss"],
+    "git.autofetch": true,
+    "editor.fontSize": 13.5,
+    "editor.semanticHighlighting.enabled": true,
+    // "editor.fontSize": 14.9,
+    // "terminal.integrated.fontSize": 15,
+    "python.experiments.optInto": [
+      "pythonDiscoveryModuleWithoutWatcher"
+    ],
+    "update.mode": "none",
+    "settingsSync.ignoredExtensions": [
+      "ms-python.python"
+    ],
+    "files.associations": {
+      "*.tsx": "typescriptreact"
+    }
   }
