@@ -68,3 +68,18 @@
 
 ;; (set-frame-parameter (selected-frame) 'alpha '(95 100))
 ;; (add-to-list 'default-frame-alist '(alpha 97 100))
+
+;; (defun my/projectile-switch-project-cd-magit ()
+;;   "Switch project using Projectile, then execute `cd` and `magit-status`."
+;;   (interactive)
+;;   (let ((project (projectile-completing-read "Switch to project: ")))
+;;     (when project
+;;       (cd (projectile-project-root project))
+;;       (magit-status))))
+
+;; (map! :leader
+;;       :desc "Projectile switch project and Magit status"
+;;       "o p" #'my/projectile-switch-project-cd-magit)
+
+(setq magit-repository-directories
+      '(("~/Projects" . 1)))
