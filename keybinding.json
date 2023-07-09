@@ -108,7 +108,7 @@
     "when": "!terminalFocus"
   },
   {
-    "key": "shift+cmd+c",
+    "key": "shift+cmd+t",
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
@@ -213,11 +213,15 @@
   {
     "key": "cmd+k",
     "command": "workbench.action.showCommands"
-}
-
-
-
-
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.decreaseViewSize"
+  }
   // {
   //   "key": "cmd+k",
   //   "command": "workbench.action.showCommands"
@@ -226,19 +230,18 @@
   //   "key": "shift+cmd+p",
   //   "command": "-workbench.action.showCommands"
   // },
-//   {
-//     "key": "f1",
-//     // Go to current debugging position
-//     "command": "extension.multiCommand.execute",
-//     "args": {
-//       "sequence": [
-//         "workbench.debug.action.focusCallStackView",
-//         "list.clear",
-//         "list.focusFirst",
-//         "list.select",
-//         "workbench.files.action.focusOpenEditorsView"
-//       ]
-//     }
-// },
-  
+  //   {
+  //     "key": "f1",
+  //     // Go to current debugging position
+  //     "command": "extension.multiCommand.execute",
+  //     "args": {
+  //       "sequence": [
+  //         "workbench.debug.action.focusCallStackView",
+  //         "list.clear",
+  //         "list.focusFirst",
+  //         "list.select",
+  //         "workbench.files.action.focusOpenEditorsView"
+  //       ]
+  //     }
+  // },
 ]
