@@ -181,7 +181,8 @@
         ]
       },
     ],
-    "workbench.colorTheme": "Tokyo City Darker",
+    "workbench.colorTheme": "Tokyo Night",
+
     "workbench.colorCustomizations": {
       "[Atom Background Modified]": {
         "editorCursor.background": "#ffffff", // Cursor color
@@ -195,7 +196,6 @@
         // "editor.selectionBackground": "#4b0808",
         "editor.selectionBackground": "#8d45cd46",
         "editor.wordHighlightStrongBorder": "#7982a9",
-
         "sideBar.foreground": "#dcdee5", // sidebar font color
         "panelTitle.activeBorder": "#3d59a1",
         "panelTitle.activeForeground": "#bdc7f0",
@@ -220,7 +220,6 @@
         "activityBar.foreground": "#bdc7f0",
         "activityBar.inactiveForeground": "#787c99",
         "gitDecoration.ignoredResourceForeground": "#9fa3bc",
-
       },
     },
     "editor.tokenColorCustomizations": {
@@ -242,6 +241,7 @@
         // ]
       },
     },
+
     "git.ignoreMissingGitWarning": true,
     "editor.accessibilitySupport": "off",
     "workbench.iconTheme": "material-icon-theme",
@@ -289,5 +289,13 @@
     ],
     "files.associations": {
       "*.tsx": "typescriptreact"
-    }
+    },
+    "python.terminal.executeInFileDir": true,
+    "powermode.presets": "exploding-rift",
+    "powermode.enabled": true,
+    "powermode.shake.enabled": false,
+    "debug.console.fontSize": 13.5,
+    "debug.openDebug": "neverOpen",
+    "window.zoomLevel": 0.3
   }
+
