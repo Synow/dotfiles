@@ -1,4 +1,7 @@
 {
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+  },
   "terminal.integrated.profiles.osx": {
     "zsh": {
       "path": "/bin/zsh",
@@ -9,6 +12,7 @@
     }
   },
   "terminal.integrated.fontFamily": "MesloLGS NF",
+  // VSCODE Vim
   "vim.insertModeKeyBindings": [
     {
       "before": [
@@ -27,16 +31,21 @@
   // }
   // ],
   "vim.handleKeys": {
-    "<C-a>": false,
+    // "<C-a>": false,
     "<C-f>": false,
     "<C-c>": false,
-    "<C-x>": false,
+    // "<C-x>": false,
     "<C-b>": false,
     "<C-j>": true,
     "<C-k>": true,
   },
+  "vim.highlightedyank.enable": true,
+  "vim.gdefault": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.duration": 250,
   "vim.sneak": true,
   "vim.easymotion": true,
+  "vim.foldfix": true,
   "vim.useCtrlKeys": true,
   "vim.vimrc.enable": false,
   "vim.leader": "<space>",
@@ -44,15 +53,48 @@
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["ctrl+v"],
-      "after": ["ctrl+r", "\""]
+      "before": [
+        "ctrl+v"
+      ],
+      "after": [
+        "ctrl+r",
+        "\""
+      ]
     },
     {
-      "before": ["alt+j"],
-      "after": ["ctrl+n"]
+      "before": [
+        "alt+j"
+      ],
+      "after": [
+        "ctrl+n"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    [
+        {
+            "before": ["U"],
+            "commands":["extension.vim_ctrl+r"]
+        }
+    ],
+    {
+      "before": [
+        "g",
+        "q"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "f"
+      ],
+      "commands": [
+        "editor.action.referenceSearch.trigger"
+      ]
+    },
     {
       "before": [
         "J"
@@ -94,6 +136,32 @@
       "after": [
         "y",
         "$"
+      ]
+    },
+    { // emulate sneak with easymotion (no label mode in sneak yet)
+    "before": [ "<leader>", "s" ],
+    "after": [ "<leader>", "<leader>", "2", "f" ]
+    },
+    {
+      "before": [ "<leader>", "S" ],
+      "after": [ "<leader>", "<leader>", "2", "F" ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.debug.configure"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "z"
+      ],
+      "commands": [
+        "workbench.action.toggleZenMode"
       ]
     },
     {
@@ -157,15 +225,6 @@
       ],
       "commands": [
         "workbench.action.closeOtherEditors"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "s"
-      ],
-      "commands": [
-        "workbench.action.files.save"
       ]
     },
     {
@@ -258,7 +317,7 @@
         "n"
       ],
       "commands": [
-        "workbench.action.nextEditor"
+        "workbench.action.moveEditorToNewWindow"
       ]
     },
     {
@@ -268,15 +327,6 @@
       ],
       "commands": [
         "workbench.action.previousEditor"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "c"
-      ],
-      "commands": [
-        "editor.action.commentLine"
       ]
     },
   ],
@@ -336,13 +386,23 @@
       ]
     },
   ],
-  // "workbench.colorTheme": "Tokyo Night",
+
+
+
+  // Theming
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "catppuccin.workbenchMode": "flat",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
       "editorCursor.foreground": "#a6c5e0", // Cursor color
       "editorCursor.background": "#020202", // Cursor color
     },
     "[Atom Background Modified]": {
+      "editorCursor.background": "#ffffff", // Cursor color
+    },
+    "[Catppuccin *]": {
+      "editorCursor.foreground": "#AC8DD8", // Cursor color
       "editorCursor.background": "#ffffff", // Cursor color
     },
     "[Tokyo *]": {
@@ -385,62 +445,65 @@
       "comments": "#6cd5718a",
     },
     "[Tokyo *]": {
-      "comments": "#6cd5718a",
-      // "textMateRules": [
-      //   {
-      //     "scope": [
-      //       "source.python"
-      //     ],
-      //     "settings": {
-      //       "fontStyle": "",
-      //       "foreground": "#cfd4ea"
-      //     }
-      //   }
-      // ]
+      // "comments": "#6cd5718a",
+      "comments": "#8eba908a",
     },
+    "[Catpp*]":{
+      "comments": "#8eba908a",
+    }
   },
+  "editor.cursorBlinking": "smooth",
+
+
+  // Others
   "git.ignoreMissingGitWarning": true,
   "editor.accessibilitySupport": "off",
   "editor.guides.bracketPairs": true,
   "editor.guides.highlightActiveIndentation": true,
   "editor.suggest.preview": true,
   "editor.guides.indentation": true,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "editor.cursorBlinking": "smooth",
   "gitlens.hovers.currentLine.over": "line",
-  "audioCues.terminalQuickFix": "on",
+  // "audioCues.terminalQuickFix": "on",
   "git.autofetch": true,
-  "editor.fontSize": 13.5,
   "editor.semanticHighlighting.enabled": true,
-  "update.mode": "none",
-  "files.associations": {
-    "*.tsx": "typescriptreact"
-  },
-  "python.terminal.executeInFileDir": true,
-  "debug.console.fontSize": 13.5,
+  // "editor.fontSize": 12,
+  // "debug.console.fontSize": 13.5,
+  // "terminal.integrated.fontSize": 13.5,
+  "window.zoomLevel": -0.3,
   "debug.openDebug": "neverOpen",
-  "terminal.integrated.fontSize": 14.5,
-  "notebook.lineNumbers": "on",
-  "python.formatting.provider": "black",
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "editor.defaultFormatter": "ms-python.black-formatter",
   "explorer.confirmDelete": false,
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
   "debug.inlineValues": "on",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "editor.minimap.autohide": true,
+  // "editor.minimap.autohide": true,
   "editor.minimap.enabled": false,
-  "jupyter.notebookFileRoot": "${workspaceFolder}",
-  "diffEditor.experimental.useVersion2": true,
-  "diffEditor.experimental.collapseUnchangedRegions": true,
   "editor.cursorSurroundingLines": 5,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "workbench.activityBar.location": "bottom",
+  "python.createEnvironment.trigger": "off",
+  "files.exclude": {// Hide pycach
+    "**/__pycache__": true
+  },
+  "debug.console.acceptSuggestionOnEnter": "off",
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "jupyter.debugJustMyCode": false,
+  "notebook.lineNumbers": "on",
+  "git.openRepositoryInParentFolders": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "cSpell.enabled": true,
+  "calva.prettyPrintingOptions": {
+    "printEngine": "pprint",
+    "enabled": true,
+    "width": 120,
+    "maxLength": 50
+  },
+  "calva.paredit.defaultKeyMap": "original",
+  "[clojure]": {
+    "editor.defaultFormatter": "betterthantomorrow.calva"
+  },
+  "cSpell.userWords": [
+    "litellm",
+    "OMNI",
+    "openai"
+  ],
+  "git.confirmSync": false,
+  "terminal.integrated.inheritEnv": true,
 }
